@@ -24,21 +24,90 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#percentages">Percentages</a>
+						<a class="nav-link" href="#max">1RM</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#max">1RM</a>
+						<a class="nav-link" href="#percentages">Percentages</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 	<main role="main" class="container">
-		<h1>A collection of Fitness & Health related calculators</h1>
+		<h1 class="text-center">A collection of health & fitness related calculators</h1>
+		<div class="anchor" id="max">
+			<div class="card">
+				<div class="card-header">
+					<h4>One Rep Max Calculator</h4>
+				</div>
+				<div class="card-body">
+					<div class="form-group-flex">
+						<div class="container">
+							<label for="percentagesMaxInput">Weight</label>
+							<input type="number" class="form-control" id="maxWeightInput" value="100">
+						</div>
+						<div class="container mt-2">
+							<label for="percentagesMaxInput">Reps</label>
+							<input type="number" class="form-control" id="maxRepsInput" value="5">
+						</div>
+					</div>
+					<div class="triple-table-wrapper large-triple-table-wrapper">
+						<table class="table table-striped triple-table large-triple-table">
+							<tbody>
+								<tr>
+									<td>Epley</td>
+									<td id="maxEpleyOutput">40</td>
+								</tr>
+								<tr>
+									<td>Brzycki</td>
+									<td id="maxBrzyckiOutput">45</td>
+								</tr>
+								<tr>
+									<td>McGlothin</td>
+									<td id="maxMcGlothinOutput">50</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped-inverse triple-table large-triple-table">
+							<tbody>
+								<tr>
+									<td>Lombardi</td>
+									<td id="maxLombardiOutput">60</td>
+								</tr>
+								<tr>
+									<td>Mayhew et al.</td>
+									<td id="maxMayhewOutput">65</td>
+								</tr>
+								<tr>
+									<td>O'Conner et al.</td>
+									<td id="maxOConnerOutput">70</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table table-striped triple-table large-triple-table">
+							<tbody>
+								<tr>
+									<td>Wathan</td>
+									<td id="maxWathanOutput">60</td>
+								</tr>
+								<tr>
+									<td>Baechle</td>
+									<td id="maxBaechleOutput">65</td>
+								</tr>
+								<tr>
+									<td>dos Remedios</td>
+									<td id="maxDosRemediosOutput">70</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="anchor" id="percentages">
 			<div class="card">
 				<div class="card-header">
-					<h2>Percentages Calculator</h2>
+					<h4>Percentages Calculator</h4>
 				</div>
 				<div class="card-body">
 					<div class="form-group-flex">
@@ -47,27 +116,25 @@
 							<input type="number" class="form-control" id="percentagesMaxInput" value="100">
 						</div>
 						<div class="container mt-2">
-							<div class="form-check" id="useTrainingMaxWrapper">
-								<input type="checkbox" class="form-check-input" id="useTrainingMax">
-								<label class="form-check-label" for="useTrainingMax">Use Training Max</label>
-								<small class="form-text text-muted">90% of 1RM: <span id="trainingMaxValue"></span></small>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="percentagesUseTrainingMax">
+								<label class="form-check-label" for="percentagesUseTrainingMax">Use Training Max</label>
+								<small class="form-text text-muted">90% of 1RM: <span id="percentagesTrainingMaxValue"></span></small>
 							</div>
 						</div>
 					</div>
-
 					<div class="form-group-flex">
 						<div class="container">
-							<label for="customPercentageInput">Enter Custom Percentage</label>
-							<input type="number" class="form-control" id="customPercentageInput" placeholder="Custom Percentage">
+							<label for="percentagesCustomInput">Custom Percentage</label>
+							<input type="number" class="form-control" id="percentagesCustomInput" placeholder="Custom Percentage">
 						</div>
 						<div class="container mt-1">
-							<label>Result</label>
-							<span class="form-control" id="customPercentageOutput">
+							<span class="form-control" id="percentagesCustomOutput">
 							</span>
 						</div>
 					</div>
-					<div class=percentage-table-wrapper>
-						<table class="table table-striped percentage-table">
+					<div class=triple-table-wrapper>
+						<table class="table table-striped percentages-table triple-table">
 							<tbody>
 								<tr>
 									<td>40%</td>
@@ -87,7 +154,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<table class="table table-striped percentage-table">
+						<table class="table table-striped percentages-table triple-table">
 							<tbody>
 								<tr>
 									<td>60%</td>
@@ -107,7 +174,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<table class="table table-striped percentage-table">
+						<table class="table table-striped percentages-table triple-table">
 							<tbody>
 								<tr>
 									<td>80%</td>
@@ -130,18 +197,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="anchor" id="max">
-				<div class="card">
-					<div class="card-header">
-						1RM Calculator
-					</div>
-					<div class="card-body">
-						<form>
-
-						</form>
-					</div>
-				</div>
-			</div>
 		</div>
 	</main>
 	<footer class="footer">
@@ -157,6 +212,7 @@
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script src="js/calculators.js"></script>
 	<script src="js/percentages.js"></script>
+	<script src="js/max.js"></script>
 </body>
 
 </html>

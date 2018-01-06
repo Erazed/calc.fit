@@ -27,7 +27,11 @@ body {
   padding-top: 66px;
 }
 
-.percentage-table-wrapper {
+.table-striped-inverse tbody tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.triple-table-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -38,29 +42,38 @@ body {
   margin-bottom: 1rem;
 }
 
-.percentage-table {
+.triple-table {
   border: 1px solid #dee2e6;
   margin-bottom: 0;
   text-align: center;
   width: 33%;
 }
 
-.percentage-table td {
+.triple-table td {
   width: 50%;
 }
 
-.percentage-table td:first-child {
+.triple-table td:first-child {
   font-weight: bold;
+}
+
+@media screen and (max-width:992px) {
+  .large-triple-table-wrapper {
+    flex-direction: column;
+  }
+  .large-triple-table {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width:500px) {
   .form-group-flex {
     flex-direction: column;
   }
-  .percentage-table-wrapper {
+  .triple-table-wrapper {
     flex-direction: column;
   }
-  .percentage-table {
+  .triple-table {
     width: 100%;
   }
 }

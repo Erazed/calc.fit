@@ -1,19 +1,17 @@
-$(document).ready(function() {
-  updateOutputs();
-});
+updatePercentagesOutputs();
 
-$('#percentagesMaxInput').on('input', updateOutputs);
+$('#percentagesMaxInput').on('input', updatePercentagesOutputs);
 
-$('#customPercentageInput').on('input', updateOutputs);
+$('#percentagesCustomInput').on('input', updatePercentagesOutputs);
 
-$('#useTrainingMax').change(updateOutputs);
+$('#percentagesUseTrainingMax').change(updatePercentagesOutputs);
 
-function updateOutputs() {
+function updatePercentagesOutputs() {
   var max = $('#percentagesMaxInput').val();
-  $('#trainingMaxValue').text(Math.round(max * 0.9));
-  if($('#useTrainingMax').prop('checked')) max *= 0.9;
-  $('#customPercentageOutput').text(Math.round($('#customPercentageInput').val() * max / 100));
-  $('.percentage-table td:last-child').each(function() {
+  $('#percentagesTrainingMaxValue').text(Math.round(max * 0.9));
+  if($('#percentagesUseTrainingMax').prop('checked')) max *= 0.9;
+  $('#percentagesCustomOutput').text(Math.round($('#percentagesCustomInput').val() * max / 100));
+  $('.percentages-table td:last-child').each(function() {
     var value = Math.round($('#percentagesMaxInput').val() * $(this).attr('data-percentage'));
     $(this).text(Math.round($(this).attr('data-percentage') * max));
   });
