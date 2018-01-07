@@ -86,9 +86,12 @@ function updateWeightToPlateView() {
     }
   }
   drawWeightToPlates(calculatedPlates, collars);
+
 }
 
 function drawWeightToPlates(plates, collars) {
+  var textOutput = '';
+
   var canvas = document.getElementById('weightToPlateCanvas');
   var x = canvas.getContext('2d');
   canvas.width=1600;
@@ -100,6 +103,7 @@ function drawWeightToPlates(plates, collars) {
   var plateOffset = 310;
   //Draw plates
   for(var i = 0; i < plates.length; i++) {
+    textOutput += plates[i].weight + ', ';
     x.fillStyle = plates[i].colour;
     x.fillRect(plateOffset, 450 - plates[i].height, plates[i].width * 2, plates[i].height * 2);
     plateOffset += 10;
@@ -110,5 +114,9 @@ function drawWeightToPlates(plates, collars) {
   if(collars) {
     x.fillStyle = '#d8d8d8';
     x.fillRect(plateOffset, 325, 150, 250);
+    textOutput += 'collar, ';
   }
+
+  //Text output
+  $('#weightToPlateOutput').text(textOutput.slice(0,textOutput.length-2));
 }
