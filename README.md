@@ -1,4 +1,4 @@
-#Fitness Calculators
+# Fitness Calculators
 A collection of fitness related calculators.
 
 ### 1RM Calculator
